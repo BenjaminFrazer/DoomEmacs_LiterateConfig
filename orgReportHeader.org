@@ -1,0 +1,58 @@
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \fancyhead[R]{{\tiny\textcolor{gray}\leftmark\;}}}
+#+LATEX_HEADER: \cfoot{\thepage}
+#+LATEX_HEADER: \renewcommand{\headrulewidth}{0pt}
+#+LATEX_HEADER: \usepackage{url}
+#+LATEX_HEADER: \usepackage{xfrac}
+#+LATEX_HEADER: \usepackage{bm}
+#+LATEX_HEADER: \usepackage{rotfloat}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \hypersetup{hidelinks}
+#+LATEX_HEADER: \usepackage{gensymb}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \numberwithin{equation}{section}
+#+LATEX_HEADER: \usepackage{chngcntr}
+#+LATEX_HEADER: \counterwithin{figure}{section}
+#+LATEX_HEADER: \counterwithin{table}{section}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \newcommand {\R}{\mathbb{R}}
+#+LATEX_HEADER: \usepackage{gensymb}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{minted}[linenos]
+
+# #+LATEX_HEADER: \mdfdefinestyle{sourcecode}{%                                               .
+# #+LATEX_HEADER: %backgroundcolor=darkgray,
+# #+LATEX_HEADER: skipabove=12pt,
+# #+LATEX_HEADER: hidealllines=true,
+# #+LATEX_HEADER: apptotikzsetting={%
+# #+LATEX_HEADER:   \tikzset{mdfbackground/.append style={fill=deepblue,fill opacity=0.1}}},
+# #+LATEX_HEADER: leftline=true,%innerleftmargin=10,innerrightmargin=10,
+# #+LATEX_HEADER: innerleftmargin=25,
+# #+LATEX_HEADER: linewidth = 4pt,
+# #+LATEX_HEADER: roundcorner = 2pt,
+# #+LATEX_HEADER: linecolor= darkgray,
+# #+LATEX_HEADER: %#frametitlerule=true,frametitlerulecolor=green,                             \usepackage{sourcecodepro}
+# #+LATEX_HEADER: %#frametitlebackgroundcolor=darkgray,                                        \definecolor{deepblue}{rgb}{0.0, 0.18, 0.39}
+# #+LATEX_HEADER: %#frametitlerulewidth=2pt                                                    \usepackage{parskip}
+# #+LATEX_HEADER: }
+
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist{noitemsep}
+#+LATEX_HEADER: \usepackage[format=plain, labelfont={bf}, textfont=it]{caption}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER_EXTRA:  \usepackage[framemethod=tikz]{mdframed}
+#+LATEX_HEADER_EXTRA: \BeforeBeginEnvironment{minted}{\begin{mdframed}[style=sourcecode]}
+#+LATEX_HEADER_EXTRA: \AfterEndEnvironment{minted}{\end{mdframed}}
+#+begin_export latex
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+\renewcommand{\descriptionlabel}[1]{%
+  \hspace\labelsep \upshape\bfseries #1.%
+
+}
+#+end_export
