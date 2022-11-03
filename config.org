@@ -319,6 +319,7 @@ Don't know what this does yet
 (add-to-list 'auto-mode-alist '("\\.ino$" . cpp-mode))
 #+end_src
 ** Line Numbers
+Enable line numbers only in programming modes. This involves removing the hook which sets the doom global line number mode first and replaceing it with out own hook.
 #+begin_src emacs-lisp :tangle yes
 (defun benjamin/enable-line-numbers ()
   (setq display-line-numbers t))
