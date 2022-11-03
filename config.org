@@ -59,7 +59,6 @@ If you use `org' and don't want your org files in the default location below, ch
 #+end_src
 ** Babel
 *** ANSI Colour Mode
-
 Define =my/babel-ansi()= function to convert output of babel blocs into full ANSI colour.
 #+begin_src emacs-lisp :tangle yes
 (defun my/babel-ansi ()
@@ -110,15 +109,22 @@ Hook ANSI colour mode into org-mode hook so it activates only in org-mode.
   '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
 )
 #+end_src
-*** Link color
+*** Link colour
 #+begin_src emacs-lisp :tangle yes
 (custom-set-faces
  '(org-link ((t (:inherit link :foreground "maroon")))))
 #+end_src
 *** List bullets
+Set nice unicode symbols that org will replace the ASCI list symbols (-/+/*) with:
 #+begin_src emacs-lisp :tangle yes
 (after! org
 (setq org-superstar-item-bullet-alist '((42 . 8226) (43 . 9655) (45 . 9658))))
+#+end_src
+
+Set the ASCI symbols for each list level:
+#+begin_src emacs-lisp :tangle yes
+(after! org
+(setq  org-list-demote-modify-bullet '(("-" . "+") ("1." . "-") ("+" . "*"))))
 #+end_src
 
 *** Org image Width
@@ -258,8 +264,7 @@ Don't know what this does yet
 (setq org-agenda-skip-function-global
       '(org-agenda-skip-entry-if 'todo '("DONE" "BLOCK" "TODO" )))
 #+end_src
-** Todo keywords
-
+** TODO keywords
 #+begin_src emacs-lisp :tangle yes
 (after! org
 (add-to-list 'org-todo-keywords
@@ -302,7 +307,6 @@ Don't know what this does yet
         :unnarrowed t))
       )
 #+end_src
-* Projectile
 * Dired
 #+begin_src emacs-lisp :tangle yes
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
