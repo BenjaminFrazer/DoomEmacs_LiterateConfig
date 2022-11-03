@@ -1,0 +1,4 @@
+#+title: Readme
+
+* Overview
+My literate Doom Emacs configuration, written in Emacs org-mode. For the main configuration file check out: [[file:config.org]].
