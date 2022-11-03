@@ -9,7 +9,7 @@
         doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :size 11)
         doom-unicode-font (font-spec :family "Ubuntu" :size 12))
 
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type nil)
 
 (with-eval-after-load 'evil
     (defalias #'forward-evil-word #'forward-evil-symbol)
@@ -62,6 +62,9 @@
 
 (after! org
 (setq org-superstar-item-bullet-alist '((42 . 8226) (43 . 9655) (45 . 9658))))
+
+(after! org
+(setq  org-list-demote-modify-bullet '(("-" . "+") ("1." . "-") ("+" . "*"))))
 
 (after! org
 (setq! org-image-actual-width 300))
@@ -203,3 +206,8 @@
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
 (add-to-list 'auto-mode-alist '("\\.ino$" . cpp-mode))
+
+(defun benjamin/enable-line-numbers ()
+  (setq display-line-numbers t))
+(add-hook 'prog-mode-hook 'benjamin/enable-line-numbers)
+(remove-hook 'prog-mode-hook 'display-line-numbers-mode)

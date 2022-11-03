@@ -3,12 +3,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "c865644bfc16c7a43e847828139b74d1117a6077a845d16e71da38c8413a5aaa" default))
- '(safe-local-variable-values '((line-spacing . 0.1))))
+ '(ignored-local-variable-values '((line-spacing . 0.1)))
+ '(safe-local-variable-values '((line-spacing . 0.2) (line-spacing . 0.1))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-level-1 ((t (:inherit outline-1 :height 1.4 :weight semi-bold))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.2 :weight semi-bold))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.1 :weight semi-bold))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.0 :weight semi-bold))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
