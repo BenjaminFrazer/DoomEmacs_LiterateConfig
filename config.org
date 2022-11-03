@@ -1,4 +1,28 @@
 #+title: Config
+* Table Of Contents :TOC_2:
+- [[#user-info][User info]]
+- [[#aesthetics][Aesthetics]]
+  - [[#doom-theme][Doom theme]]
+  - [[#line-numbers][Line numbers]]
+- [[#keybindings][Keybindings]]
+  - [[#evil][Evil]]
+- [[#org-mode][Org mode]]
+  - [[#general][general]]
+  - [[#babel][Babel]]
+  - [[#aesthetics-1][Aesthetics]]
+  - [[#export][Export]]
+  - [[#noter][Noter]]
+  - [[#org-capture][Org Capture]]
+  - [[#refile][Refile]]
+  - [[#org-agenda][Org agenda]]
+  - [[#keywords][keywords]]
+- [[#roam][Roam]]
+  - [[#capture-templates][Capture Templates]]
+- [[#dired][Dired]]
+- [[#ide][IDE]]
+  - [[#arduino][Arduino]]
+  - [[#line-numbers-1][Line Numbers]]
+
 * User info
 #+begin_src emacs-lisp :tangle yes
 (setq user-full-name "Ben Frazer"
