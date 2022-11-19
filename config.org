@@ -362,7 +362,7 @@ Don't know what this does yet
       )
 #+end_src
 ** Display Templates
-This is to stop the names getting trimmed down when not in full screen.
+This is to stop the names getting truncated down when not in full screen.
 #+begin_src emacs-lisp :tangle yes
 (setq
  org-roam-node-display-template
