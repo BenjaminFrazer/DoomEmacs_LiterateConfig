@@ -1,29 +1,4 @@
 #+title: Config
-* Emacs General
-** Sorting
-Configure case insensitive buffer sorting on call to =sort-lines=. This means that we get:
-#+begin_src verbatim
-A
-a
-B
-b
-C
-c
-#+end_src
-
-Instead of:
-#+begin_src verbatim
-A
-B
-C
-a
-b
-c
-#+end_src
-#+begin_src emacs-lisp :tangle yes
-(setq sort-fold-case t)
-#+end_src
-
 * Table Of Contents :TOC_2:
 - [[#emacs-general][Emacs General]]
   - [[#sorting][Sorting]]
@@ -51,6 +26,31 @@ c
   - [[#arduino][Arduino]]
   - [[#line-numbers-1][Line Numbers]]
 - [[#-file-settings][⚙ File settings]]
+
+* Emacs General
+** Sorting
+Configure case insensitive buffer sorting on call to =sort-lines=. This means that we get:
+#+begin_src verbatim
+A
+a
+B
+b
+C
+c
+#+end_src
+
+Instead of:
+#+begin_src verbatim
+A
+B
+C
+a
+b
+c
+#+end_src
+#+begin_src emacs-lisp :tangle yes
+(setq sort-fold-case t)
+#+end_src
 
 * User info
 #+begin_src emacs-lisp :tangle yes
