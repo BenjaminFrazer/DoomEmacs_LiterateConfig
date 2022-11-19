@@ -45,10 +45,12 @@ c
   - [[#keywords][keywords]]
 - [[#roam][Roam]]
   - [[#capture-templates][Capture Templates]]
+  - [[#display-templates][Display Templates]]
 - [[#dired][Dired]]
 - [[#ide][IDE]]
   - [[#arduino][Arduino]]
   - [[#line-numbers-1][Line Numbers]]
+- [[#-file-settings][⚙ File settings]]
 
 * User info
 #+begin_src emacs-lisp :tangle yes
@@ -359,6 +361,20 @@ Don't know what this does yet
         :unnarrowed t))
       )
 #+end_src
+** Display Templates
+This is to stop the names getting trimmed down when not in full screen.
+#+begin_src emacs-lisp :tangle yes
+(setq
+ org-roam-node-display-template
+ (format "${doom-hierarchy} %s %s"
+         (propertize "${doom-type:12}" 'face 'font-lock-keyword-face)
+         (propertize "${doom-tags:*}" 'face 'org-tag))
+ )
+#+end_src
+
+#+RESULTS:
+: ${doom-hierarchy} ${doom-type:12} ${doom-tags:*}
+
 * Dired
 #+begin_src emacs-lisp :tangle yes
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
