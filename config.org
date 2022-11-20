@@ -18,6 +18,8 @@
   - [[#refile][Refile]]
   - [[#org-agenda][Org agenda]]
   - [[#keywords][keywords]]
+- [[#completion---company][Completion - Company]]
+  - [[#org-backend][Org backend]]
 - [[#roam][Roam]]
   - [[#capture-templates][Capture Templates]]
   - [[#display-templates][Display Templates]]
@@ -344,6 +346,55 @@ Don't know what this does yet
 (add-to-list 'org-todo-keyword-faces '("UNSENT" :foreground "green" :weight bold))
 )
 #+end_src
+* Completion - Company
+** Org backend
+*** Configure Ispell
+First we configure company =ispell= to use our =hunspell= word-list.
+#+begin_src emacs-lisp :tangle yes
+;; (require 'company-ispell)
+(after! org
+  (setq company-ispell-available t)
+  (setq company-ispell-dictionary
+        (file-truename "~/.hunspell_en_GB")))
+#+end_src
+
+*** Set Org company backends
+Then set the company back ends for org. Note that =company-files= needs to appear before =company-dabbrev/ispell= because it returns a different prefix and thus cant be merged... I think, either way it works like this.
+#+begin_src emacs-lisp :tangle yes
+(after! org
+  (set-company-backend! 'org-mode
+    '(company-capf :seperate company-files company-dabbrev company-ispell)))
+#+end_src
+
+*** Configure word-list sorting
+In order for =ispell= to work on our =hunspell= word-list we need to have the list sorted alphabetically so we define function to sort word file:
+#+begin_src emacs-lisp :tangle yes
+(defun ben/try_sort_buffer (buffer-name)
+  "Tries to sort buffer-name alphabetically. Won't throw an error."
+  (condition-case nil
+      (save-excursion
+        (find-file buffer-name)
+        (sort-lines nil (point-min) (point-max))
+        (save-buffer)
+        (kill-buffer (current-buffer)))
+    (error (message "caught error"))))
+#+end_src
+
+#+RESULTS:
+: ben/try_sort_buffer
+
+We hook the sort function into startup only because there unfortunately isn't a =on-save-to-dictionary= hook.
+#+begin_src emacs-lisp :tangle yes
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (ben/try_sort_buffer "~/.hunspell_en_GB")) )
+#+end_src
+
+#+RESULTS:
+| (lambda nil (ben/try_sort_buffer ~/.hunspell_en_GB)) | doom-load-packages-incrementally-h | doom-reset-file-handler-alist-h |
+
+[[file:../.hunspell_en_GB][Link to Wordlist]]
+
 
 * Roam
 ** Capture Templates
