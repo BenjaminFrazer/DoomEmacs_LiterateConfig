@@ -20,6 +20,7 @@
   - [[#keywords][keywords]]
 - [[#completion---company][Completion - Company]]
   - [[#org-backend][Org backend]]
+  - [[#programming-mode-backend][Programming mode backend]]
 - [[#roam][Roam]]
   - [[#capture-templates][Capture Templates]]
   - [[#display-templates][Display Templates]]
@@ -187,7 +188,6 @@ Set the ASCI symbols for each list level:
 (after! org
 (setq! org-image-actual-width 300))
 #+end_src
-
 
 
 ** Export
@@ -395,6 +395,12 @@ We hook the sort function into startup only because there unfortunately isn't a 
 
 [[file:../.hunspell_en_GB][Link to Wordlist]]
 
+** TODO Programming mode backend
+#+begin_src emacs-lisp :tangle no
+(after! prog-mode
+  (set-company-backend! 'org-mode
+    '(prog-mode company-capf company-files company-yasnippet)))
+#+end_src
 
 * Roam
 ** Capture Templates
