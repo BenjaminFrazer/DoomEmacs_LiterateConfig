@@ -401,7 +401,7 @@ Then set the company back ends for org. Note that =company-files= needs to appea
 #+begin_src emacs-lisp :tangle yes
 (after! org
   (set-company-backend! 'org-mode
-    '(company-capf :seperate company-files company-dabbrev company-ispell)))
+    '(company-capf :seperate company-files company-ispell)))
 #+end_src
 
 *** Configure word-list sorting
