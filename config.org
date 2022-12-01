@@ -436,7 +436,7 @@ We hook the sort function into startup only because there unfortunately isn't a 
 ** TODO Programming mode backend
 #+begin_src emacs-lisp :tangle no
 (after! prog-mode
-  (set-company-backend! 'org-mode
+  (set-company-backend! 'prog-mode
     '(prog-mode company-capf company-files company-yasnippet)))
 #+end_src
 
