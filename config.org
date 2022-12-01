@@ -143,6 +143,43 @@ Hook ANSI colour mode into org-mode hook so it activates only in org-mode.
 (after! org
 (add-hook 'org-mode-hook 'org-babel-ansi-colors-mode))
 #+end_src
+*** TODO Python-Jupyter
+Work in progress!
+#+begin_src emacs-lisp :tangle yes
+(setq org-babel-default-header-args:jupyter-python
+      '((:session . "py")
+        (:kernel . "python3")
+        (:noweb . "yes")
+        ;; (:kernel . "wineWebScrapeEnv")
+        ;; (:wrap)
+        ;; (:results . "replace raw")
+        (:async . "yes")
+        ;; (:pandoc . "t")
+        ;; (:prologue . "from sympy import *\n")
+        ))
+#+end_src
+
+#+RESULTS:
+: ((:session . py) (:kernel . python3) (:noweb . yes) (:async . yes))
+
+**** TODO code for adding additional kernels
+#+begin_src emacs-lisp :tangle no
+(add-to-list 'org-babel-default-header-args:jupyter-python
+      '(:kernel . "wineWebScrapeEnv"))
+#+end_src
+
+#+RESULTS:
+: ((:kernel . wineWebScrapeEnv) (:session . py) (:kernel . python3) (:async . yes))
+
+**** Test jupyter block
+#+begin_src jupyter-python :tangle no
+import sys
+print(sys.executable)
+#+end_src
+
+#+RESULTS:
+: /usr/bin/python
+
 
 ** Aesthetics :ignore:
 *** Shows collapsed headings
