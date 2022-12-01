@@ -189,7 +189,7 @@ print(sys.executable)
 
 *** Separator lines
 #+begin_src emacs-lisp :tangle yes
-(setq org-cycle-separator-lines 3) ;; stops the ellipsis miss-displaying
+;; (setq org-cycle-separator-lines 2) ;; stops the ellipsis miss-displaying
 #+end_src
 
 *** Heading size:
@@ -383,6 +383,7 @@ Don't know what this does yet
 (add-to-list 'org-todo-keyword-faces '("UNSENT" :foreground "green" :weight bold))
 )
 #+end_src
+
 * Completion - Company
 ** Org backend
 *** Configure Ispell
