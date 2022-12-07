@@ -12,6 +12,7 @@
   - [[#general][general]]
   - [[#babel][Babel]]
   - [[#aesthetics-1][Aesthetics]]
+  - [[#text][Text]]
   - [[#export][Export]]
   - [[#noter][Noter]]
   - [[#org-capture][Org Capture]]
@@ -194,14 +195,27 @@ print(sys.executable)
 
 *** Heading size:
 #+begin_src emacs-lisp :tangle yes
-(custom-set-faces
-  '(org-level-1 ((t (:inherit outline-1 :height 1.4 :weight semi-bold))))
-  '(org-level-2 ((t (:inherit outline-2 :height 1.2 :weight semi-bold))))
-  '(org-level-3 ((t (:inherit outline-3 :height 1.1 :weight semi-bold))))
-  '(org-level-4 ((t (:inherit outline-4 :height 1.0 :weight semi-bold))))
-  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
-)
+(after! org
+(custom-set-faces!
+  '(org-level-1 :inherit outline-1 :height 1.4 :weight semi-bold)
+  '(org-level-2 :inherit outline-2 :height 1.2 :weight semi-bold)
+  '(org-level-3 :inherit outline-3 :height 1.1 :weight semi-bold)
+  '(org-level-4 :inherit outline-4 :height 1.0 :weight semi-bold)
+  '(org-level-5 :inherit outline-5 :height 1.0)
+  '(org-code :inherit org-code :foreground "#7bc275")
+  '(org-link :inherit link :foreground "maroon")
+  ))
 #+end_src
+
+#+RESULTS:
+| doom--customize-themes-h-9 | doom--customize-themes-h-17 |
+
+- ~code~
+- =highlight=
+- +strike-thorough+
+- _underline_
+- /italics/
+
 *** Link colour
 #+begin_src emacs-lisp :tangle yes
 (custom-set-faces
@@ -226,6 +240,29 @@ Set the ASCI symbols for each list level:
 (setq! org-image-actual-width 300))
 #+end_src
 
+** Text
+*** Text emphasis
+~org-emphasis-alist~ must be set *before* org loads and is hard coded in the org module so there is no way to append to the list. Thus we need to explicitly set this variable before org load.
+#+begin_src emacs-lisp :tangle yes
+(setq org-emphasis-alist
+      '(("!" bold)
+        ("*" bold)
+        ("/" italic)
+        ("_" underline)
+        ("=" highlight)
+        ("~" org-code verbatim)
+        ("+" (:strike-through t))))
+#+end_src
+
+#+RESULTS:
+| ! | highlight           |          |
+| * | bold                |          |
+| _ | underline           |          |
+| = | org-verbatim        | verbatim |
+| ~ | org-code            | verbatim |
+| + | (:strike-through t) |          |
+
+=This text should be highlighted?=
 
 ** Export
 *** ignore headline
