@@ -487,7 +487,7 @@ We hook the sort function into startup only because there unfortunately isn't a 
          (file+head "literature/${citekey}.org" "#+title: Notes on \"\\${title}\\\"")
          :unnarrowed t)
       ("d" "default" plain "%?"
-        :target (file+head "roam/%<%Y%m%d%H%M%S>-${slug}.org"
+        :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                         "#+title: ${title}\n
 #+STARTUP: latexpreview  ")
         :unnarrowed t))
