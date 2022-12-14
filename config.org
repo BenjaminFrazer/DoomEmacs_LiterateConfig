@@ -242,6 +242,16 @@ Set the ASCI symbols for each list level:
 (after! org
 (setq  org-list-demote-modify-bullet '(("-" . "+") ("1." . "-") ("+" . "*"))))
 #+end_src
+*** org definition list face color
+#+begin_src emacs-lisp :tangle yes
+(after! org
+(custom-set-faces!
+  '(org-list-dt :weight semi-bold :foreground "#bebebe")
+  ))
+#+end_src
+
+#+RESULTS:
+| doom--customize-themes-h-53 |
 
 *** Org image Width
 #+begin_src emacs-lisp :tangle yes
