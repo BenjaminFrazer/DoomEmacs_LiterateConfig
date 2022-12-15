@@ -94,10 +94,10 @@ This determines the style of line numbers in effect. If set to `nil', line numbe
 *** Surround chars
 Stop adding extra spaces when surrounding by brackets:
 #+begin_src emacs-lisp :tangle yes
-(after! org
-(add-to-list 'evil-surround-pairs-alist '(?\{ . ("{" . "}")))
-(add-to-list 'evil-surround-pairs-alist '(?\[ . ("[" . "]")))
-(add-to-list 'evil-surround-pairs-alist '(?\( . ("(" . ")")))
+(with-eval-after-load 'evil-surround
+    (add-to-list 'evil-surround-pairs-alist '(?\{ . ("{" . "}")))
+    (add-to-list 'evil-surround-pairs-alist '(?\[ . ("[" . "]")))
+    (add-to-list 'evil-surround-pairs-alist '(?\( . ("(" . ")")))
 )
 #+end_src
 
