@@ -1,0 +1,4 @@
+# key: ;rt
+# name: square_root
+# --
+\sqrt{$1}$0
