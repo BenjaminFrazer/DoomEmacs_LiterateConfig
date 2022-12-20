@@ -180,12 +180,22 @@ print(sys.executable)
 #+RESULTS:
 : /usr/bin/python
 
-**** Overide python source block with jupyter
-#+begin_src emacs-lisp :tangle yes
-(org-babel-jupyter-override-src-block "python")
-#+end_src
+**** Override python source block with Jupyter
+Code found [[https://discourse.doomemacs.org/t/override-built-in-src-blocks-with-emacs-jupyter/3185][here]].
 
-#+RESULTS:
+#+begin_src emacs-lisp :tangle yes
+(defadvice! override-src-block-when-loading-jupyter (oldfun lang)
+  "If lang is in langs-to-override, map it to jupyter-lang instead."
+  :around '+org-babel-load-jupyter-h
+  (let* ((langs-to-override '(python))
+         (jupyter-lang (if (member lang langs-to-override)
+                         (intern (concat "jupyter-" (symbol-name lang)))
+                         lang))
+         (ans (funcall oldfun jupyter-lang)))
+    (when (member lang langs-to-override)
+      (org-babel-jupyter-override-src-block (symbol-name lang)))
+    ans))
+#+end_src
 
 ** Aesthetics :ignore:
 *** Shows collapsed headings
