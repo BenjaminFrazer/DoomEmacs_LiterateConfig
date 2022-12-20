@@ -190,6 +190,12 @@ print(sys.executable)
 #+RESULTS:
 : /usr/bin/python
 
+**** Overide python source block with jupyter
+#+begin_src emacs-lisp :tangle yes
+(org-babel-jupyter-override-src-block "python")
+#+end_src
+
+#+RESULTS:
 
 ** Aesthetics :ignore:
 *** Shows collapsed headings
