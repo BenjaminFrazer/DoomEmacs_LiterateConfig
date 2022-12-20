@@ -1,0 +1,4 @@
+# key: 
+# name: buffer babel header args
+# --
+#+PROPERTY: header-args:jupyter-python  :$1
