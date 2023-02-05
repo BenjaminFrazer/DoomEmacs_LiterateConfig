@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: equation
-# key:<E
+# key:\e
 # --
 \begin{align}
 $0
