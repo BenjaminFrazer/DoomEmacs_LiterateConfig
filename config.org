@@ -354,6 +354,12 @@ Don't know what this does yet
 (setq org-latex-image-default-width "0.8\\textwidth")
 (setq org-latex-default-figure-position "H")
 #+end_src
+*** No Link Transclusion
+I added a feature to the ox-md export backend that optionally blocks the transclusion of org mode -> md file links.
+#+begin_src emacs-lisp :tangle yes
+(defvar org-md-transcode-link-extentions nil)
+(setq org-html-link-org-files-as-html nil)
+#+end_src
 
 ** Noter
 #+begin_src emacs-lisp :tangle yes
