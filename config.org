@@ -82,12 +82,14 @@ c
 #+end_src
 
 #+begin_src emacs-lisp :tangle yes
-(doom/set-frame-opacity 95)
+(doom/set-frame-opacity 90)
 (setq doom-font (font-spec :family "Source Code Pro" :size 16 :weight 'semi-light)
-        doom-variable-pitch-font (font-spec :family "Ubuntu") ; inherits `doom-font''s :size
+        doom-variable-pitch-font (font-spec :family "Ubuntu" :weight 'light) ; inherits `doom-font''s :size
         doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :size 11)
         doom-unicode-font (font-spec :family "Ubuntu" :size 12))
 #+end_src
+
+#+RESULTS:
 
 ** Line numbers
 This determines the style of line numbers in effect. If set to `nil', line numbers are disabled. For relative line numbers, set this to `relative'.
