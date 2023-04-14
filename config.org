@@ -2,6 +2,7 @@
 * Table Of Contents :TOC_2:
 - [[#emacs-general][Emacs General]]
   - [[#sorting][Sorting]]
+  - [[#regex][Regex]]
 - [[#custom-functions][Custom functions]]
   - [[#comment_sign][=comment_sign=]]
 - [[#user-info][User info]]
@@ -56,6 +57,10 @@ c
 #+end_src
 #+begin_src emacs-lisp :tangle yes
 (setq sort-fold-case t)
+#+end_src
+** Regex
+#+begin_src emacs-lisp :tangle yes
+(setq reb-re-syntax 'string)
 #+end_src
 * Custom functions
 ** =comment_sign=
