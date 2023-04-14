@@ -284,21 +284,29 @@ Set the ASCI symbols for each list level:
 *** Text emphasis
 ~org-emphasis-alist~ must be set *before* org loads and is hard coded in the org module so there is no way to append to the list. Thus we need to explicitly set this variable before org load.
 #+begin_src emacs-lisp :tangle yes
+(defgroup bens-faces nil
+  "ben's faces"
+  )
+(defface bens-verbatim
+  '((t :box t))
+  "simple box"
+  )
+
 (setq org-emphasis-alist
       '(("!" bold)
         ("*" bold)
         ("/" italic)
         ("_" underline)
-        ("=" highlight)
+        ("=" bens-verbatim)
         ("~" org-code verbatim)
         ("+" (:strike-through t))))
 #+end_src
 
 #+RESULTS:
-| ! | highlight           |          |
+| ! | bold                |          |
 | * | bold                |          |
 | _ | underline           |          |
-| = | org-verbatim        | verbatim |
+| = | bens-verbatim       |          |
 | ~ | org-code            | verbatim |
 | + | (:strike-through t) |          |
 
