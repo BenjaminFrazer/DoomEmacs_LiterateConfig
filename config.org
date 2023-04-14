@@ -582,6 +582,7 @@ This is to stop the names getting truncated down when not in full screen.
 #+begin_src emacs-lisp :tangle yes
 (add-to-list 'auto-mode-alist '("\\.ino$" . cpp-mode))
 #+end_src
+
 ** Line Numbers
 Enable line numbers only in programming modes. This involves removing the hook which sets the doom global line number mode first and replaceing it with out own hook.
 #+begin_src emacs-lisp :tangle yes
@@ -590,6 +591,7 @@ Enable line numbers only in programming modes. This involves removing the hook w
 (add-hook 'prog-mode-hook 'benjamin/enable-line-numbers)
 (remove-hook 'prog-mode-hook 'display-line-numbers-mode)
 #+end_src
+
 * ⚙ File settings
 ;; Local Variables:
 ;; eval: (add-hook 'after-save-hook (lambda ()(if (y-or-n-p "Reload?")(load-file user-init-file))) nil t)
