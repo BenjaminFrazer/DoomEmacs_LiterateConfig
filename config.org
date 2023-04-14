@@ -2,6 +2,7 @@
 * Table Of Contents :TOC_2:
 - [[#emacs-general][Emacs General]]
   - [[#sorting][Sorting]]
+  - [[#execpath][execpath]]
   - [[#regex][Regex]]
 - [[#custom-functions][Custom functions]]
   - [[#comment_sign][=comment_sign=]]
@@ -57,6 +58,10 @@ c
 #+end_src
 #+begin_src emacs-lisp :tangle yes
 (setq sort-fold-case t)
+#+end_src
+** execpath
+#+begin_src emacs-lisp :tangle yes
+(setq exec-path (append exec-path '("~/.local/bin")))
 #+end_src
 ** Regex
 #+begin_src emacs-lisp :tangle yes
