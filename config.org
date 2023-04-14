@@ -2,6 +2,8 @@
 * Table Of Contents :TOC_2:
 - [[#emacs-general][Emacs General]]
   - [[#sorting][Sorting]]
+- [[#custom-functions][Custom functions]]
+  - [[#comment_sign][=comment_sign=]]
 - [[#user-info][User info]]
 - [[#aesthetics][Aesthetics]]
   - [[#doom-theme][Doom theme]]
@@ -55,6 +57,17 @@ c
 #+begin_src emacs-lisp :tangle yes
 (setq sort-fold-case t)
 #+end_src
+* Custom functions
+** =comment_sign=
+#+begin_src emacs-lisp :tangle yes
+(defun BF/sign-comment ()
+    (interactive)
+    (insert
+        (format-time-string "BF %d/%m/%Y")))
+#+end_src
+
+#+RESULTS:
+: BF/sign_comment
 
 * User info
 #+begin_src emacs-lisp :tangle yes
