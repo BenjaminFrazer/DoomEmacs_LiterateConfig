@@ -438,6 +438,7 @@ I added a feature to the ox-md export backend that optionally blocks the transcl
                         ("~/gtd/waitingfor.org" :maxlevel . 2)
                         ("~/gtd/people.org" :maxlevel . 2)
                         ("~/gtd/places.org" :maxlevel . 2)
+                        ("~/gtd/malloy_orders.org" :maxlevel . 2)
                         ("~/gtd/tickler.org" :maxlevel . 2))))
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 #+end_src
