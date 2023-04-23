@@ -12,6 +12,7 @@
   - [[#line-numbers][Line numbers]]
 - [[#keybindings][Keybindings]]
   - [[#evil][Evil]]
+  - [[#org][Org]]
 - [[#org-mode][Org mode]]
   - [[#general][general]]
   - [[#babel][Babel]]
@@ -124,6 +125,15 @@ Stop adding extra spaces when surrounding by brackets:
     (add-to-list 'evil-surround-pairs-alist '(?\[ . ("[" . "]")))
     (add-to-list 'evil-surround-pairs-alist '(?\( . ("(" . ")")))
 )
+#+end_src
+** Org
+*** Latex preview
+#+begin_src emacs-lisp :tangle yes
+(map! :after org
+      :localleader
+      :map org-mode-map
+      :prefix ("L" . "Latex")
+      :desc "Latex Preview" "r" #'org-latex-preview)
 #+end_src
 
 * Org mode
