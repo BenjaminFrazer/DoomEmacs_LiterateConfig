@@ -13,6 +13,7 @@
 - [[#keybindings][Keybindings]]
   - [[#evil][Evil]]
   - [[#org][Org]]
+  - [[#code][Code]]
 - [[#org-mode][Org mode]]
   - [[#general][general]]
   - [[#babel][Babel]]
@@ -34,6 +35,7 @@
 - [[#ide][IDE]]
   - [[#arduino][Arduino]]
   - [[#line-numbers-1][Line Numbers]]
+  - [[#c][C]]
 - [[#-file-settings][⚙ File settings]]
 
 * Emacs General
@@ -136,6 +138,7 @@ Stop adding extra spaces when surrounding by brackets:
       :prefix ("L" . "Latex")
       :desc "Latex Preview" "r" #'org-latex-preview)
 #+end_src
+** Code
 
 * Org mode
 ** general
