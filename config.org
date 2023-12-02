@@ -63,6 +63,7 @@ c
 ** execpath
 #+begin_src emacs-lisp :tangle yes
 (setq exec-path (append exec-path '("~/.local/bin")))
+(setq exec-path (append exec-path '("~/local/gcc-arm-none-eabi-10.3-2021.10/bin")))
 #+end_src
 ** Regex
 #+begin_src emacs-lisp :tangle yes
