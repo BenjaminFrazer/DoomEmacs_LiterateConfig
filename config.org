@@ -39,24 +39,25 @@
 * Emacs General
 ** Sorting
 Configure case insensitive buffer sorting on call to =sort-lines=. This means that we get:
-#+begin_src verbatim
+#+begin_example
 A
 a
 B
 b
 C
 c
-#+end_src
+#+end_example
 
 Instead of:
-#+begin_src verbatim
+#+begin_example
 A
 B
 C
 a
 b
 c
-#+end_src
+#+end_example
+
 #+begin_src emacs-lisp :tangle yes
 (setq sort-fold-case t)
 #+end_src
