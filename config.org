@@ -511,10 +511,10 @@ I added a feature to the ox-md export backend that optionally blocks the transcl
 First we configure company =ispell= to use our =hunspell= word-list.
 #+begin_src emacs-lisp :tangle yes
 ;; (require 'company-ispell)
-(after! org
-  (setq company-ispell-available t)
-  (setq company-ispell-dictionary
-        (file-truename "~/.hunspell_en_GB")))
+;; (after! org
+;;   (setq company-ispell-available t)
+;;   (setq company-ispell-dictionary
+;;         (file-truename "~/.hunspell_en_GB")))
 #+end_src
 
 *** Set Org company backends
