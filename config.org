@@ -297,7 +297,7 @@ Set the ASCI symbols for each list level:
 *** Org image Width
 #+begin_src emacs-lisp :tangle yes
 (after! org
-(setq! org-image-actual-width 300))
+(setq! org-image-actual-width '(300)))
 #+end_src
 
 ** Text
