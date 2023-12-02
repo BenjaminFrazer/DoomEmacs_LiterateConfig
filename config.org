@@ -231,6 +231,14 @@ Code found [[https://discourse.doomemacs.org/t/override-built-in-src-blocks-with
       (org-babel-jupyter-override-src-block (symbol-name lang)))
     ans))
 #+end_src
+*** Plantuml
+#+begin_src emacs-lisp :tangle yes
+(setq org-plantuml-jar-path (expand-file-name "~/local/plantuml.jar"))
+(setq plantuml-jar-path (expand-file-name "~/local/plantuml.jar"))
+#+end_src
+
+#+RESULTS:
+: /home/benf/local/plantuml.jar
 
 ** Aesthetics :ignore:
 *** Shows collapsed headings
