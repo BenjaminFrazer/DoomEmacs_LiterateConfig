@@ -141,7 +141,7 @@ Stop adding extra spaces when surrounding by brackets:
 *** Notes directory
 If you use `org' and don't want your org files in the default location below, change `org-directory'. It must be set before org loads!
 #+begin_src emacs-lisp :tangle yes
-(setq org-directory "~/notes/")
+(setq org-directory "~/repos/notes/")
 #+end_src
 
 *** Link File path
