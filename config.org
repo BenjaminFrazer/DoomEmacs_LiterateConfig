@@ -95,10 +95,9 @@ c
 
 #+begin_src emacs-lisp :tangle yes
 (doom/set-frame-opacity 90)
-(setq doom-font (font-spec :family "Source Code Pro" :size 16 :weight 'semi-light)
+(setq doom-font (font-spec :size 16 :weight 'regular)
         doom-variable-pitch-font (font-spec :family "Ubuntu" :weight 'light) ; inherits `doom-font''s :size
-        doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :size 11)
-        doom-unicode-font (font-spec :family "Ubuntu" :size 12))
+        doom-unicode-font (font-spec :family "Ubuntu Mono" :size 12))
 #+end_src
 
 #+RESULTS:
