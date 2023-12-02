@@ -412,7 +412,7 @@ I added a feature to the ox-md export backend that optionally blocks the transcl
 ** Org Capture
 *** Templates
 #+begin_src emacs-lisp :tangle yes
-(setq +org-capture-todo-file "~/gtd/inbox.org")
+(setq +org-capture-todo-file "~/repos/notes/roam/gtd/inbox.org")
 (after! org
 (setq org-capture-templates '(
     ("i" "inbox" entry
@@ -428,7 +428,7 @@ I added a feature to the ox-md export backend that optionally blocks the transcl
     ;;   "* %U %?\n%i\n%a" :prepend t)
 
     ("d" "Templates for tickler" entry
-    (file "~/gtd/tickler.org")
+    (file "~/repos/notes/roam/gtd/tickler.org")
     "* TODO %?\n%i\n%a" :prepend t)
 
     ("p" "Templates for projects" entry
@@ -441,16 +441,16 @@ I added a feature to the ox-md export backend that optionally blocks the transcl
 (after! org
   (setq org-refile-targets '(
                         (nil :maxlevel . 2)             ; refile to headings in the current buffer
-                        ("~/gtd/gtd.org" :maxlevel . 2)
-                        ("~/gtd/gtd_household.org" :maxlevel . 2)
-                        ("~/gtd/someday.org" :maxlevel . 2)
-                        ("~/gtd/calendar.org" :maxlevel . 2)
-                        ("~/gtd/waitingfor.org" :maxlevel . 2)
-                        ("~/gtd/people.org" :maxlevel . 2)
-                        ("~/gtd/places.org" :maxlevel . 2)
-                        ("~/gtd/malloy_orders.org" :maxlevel . 2)
-                        ("~/gtd/shopping.org" :maxlevel . 2)
-                        ("~/gtd/tickler.org" :maxlevel . 2))))
+                        ("~/repos/notes/roam/gtd/gtd.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/gtd_household.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/someday.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/calendar.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/waitingfor.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/people.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/places.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/malloy_orders.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/shopping.org" :maxlevel . 2)
+                        ("~/repos/notes/roam/gtd/tickler.org" :maxlevel . 2))))
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 #+end_src
 
