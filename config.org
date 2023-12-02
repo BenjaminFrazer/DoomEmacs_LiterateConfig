@@ -218,7 +218,8 @@ print(sys.executable)
 **** Override python source block with Jupyter
 Code found [[https://discourse.doomemacs.org/t/override-built-in-src-blocks-with-emacs-jupyter/3185][here]].
 
-#+begin_src emacs-lisp :tangle yes
+⚠ This is disabled for now!
+#+begin_src emacs-lisp :tangle yes :tangle no
 (defadvice! override-src-block-when-loading-jupyter (oldfun lang)
   "If lang is in langs-to-override, map it to jupyter-lang instead."
   :around '+org-babel-load-jupyter-h
